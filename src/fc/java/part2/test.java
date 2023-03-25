@@ -1,4 +1,4 @@
-package fc.java.part2;
+package src.fc.java.part2;
 
 import java.util.*;
 

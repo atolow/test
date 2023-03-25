@@ -1,4 +1,4 @@
-package fc.java.model;
+package src.fc.java.model;
 
 public class CarDAO {
     public void carInsert(CarDTO car){

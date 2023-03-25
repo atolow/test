@@ -1,7 +1,7 @@
-package fc.java.part3;
+package src.fc.java.part3;
 
-import fc.java.model.CarDAO;
-import fc.java.model.CarDTO;
+import src.fc.java.model.CarDAO;
+import src.fc.java.model.CarDTO;
 
 import java.util.Scanner;
 

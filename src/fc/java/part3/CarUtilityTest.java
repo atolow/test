@@ -1,4 +1,4 @@
-package fc.java.part3;
+package src.fc.java.part3;
 
 import fc.java.model.CarDTO;
 import fc.java.model.CarUtility;
