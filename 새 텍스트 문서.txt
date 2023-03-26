@@ -1,0 +1,156 @@
+sout -> printf
+
+javac.exe 소스파일 ->컴파일
+java.exe 실행파일->실행
+
+java.exe HelloWorld.java -ecoding UTF-8
+
+배열선언
+int[] arr=new int[6]
+
+8bit=1byte
+
+정수 32를
+예를들어 4비트라 치면
+8비트는 1바이트니까
+8비트가 4개있음
+
+00000000 00000000 00000000 00100000
+
+맨앞에 0,1 은 부호비트
+0이면 정수 1이면 음수
+나머지 31비트 는 값
+
+실수
+
+01000010 00000000 00000000 00000000
+1비트 8비트 23비트
+맨앞은 부호비트
+맨앞에 0,1 은 부호비트
+부호비트 제외하고 8비트는 지수부 그뒤부턴 가수부
+
+
+final int num=100 한번 저장되면 바꿀 수없음
+
+
+int[] boxArry= new int[3]
+
+boxAray[0] =10;
+boxAray[1] =20;
+boxAray[2] =30;
+
+String 문자열 %s
+int 정수 %d
+float 실수 %f
+char 문자 %c
+boolean 참거짓 %b
+
+String.fotmat 문자열 반환하는 메서드
+System.out.println(); 줄바꿈
+System.out.print(); 줄 안바꿈
+System.out.printf("내 이름은 %s이다 \n", name); \n줄바꿈
+
+메서드=함수
+
+import java.util.Scanner;
+
+
+Scanner scanner = new Scanner(System.in); 입력받기
+
+String value = scanner.nextLine(); 문자열로 저장
+int value = scanner.nextInt(); 정수로 저장
+int float value= scanner.nextFloat(); 실수로 저장
+boolean value= scanner.nextBoolean(); 참거짓으로 저장
+
+변수.length 그만큼
+
+
+객체=오브젝트(object)
+
+객체: 속성과 행위를 가짐
+속성:이름 나이 성별 혈액형 키
+행위:밥을먹다 공부를 하다 일을하다
+
+클래스: 객체를 만드는 틀
+
+인스턴스 실제로 사용 가능한 상태 new Persion();
+
+// 인스턴스를 통해서 PI에 접근
+System.out.println(c1.PI);
+// 클래스를 통해서 PI에 접근
+
+System.out.println(Calculator.PI);
+
+클래스
+Book b;  ->b는 객체 변수 이름
+new Book();  ->객체 생성 (실체=인스턴스 를 만들기) (Book은 클래스 이름 =생성자 메서드)
+
+
+
+Book b;
+b= new Book();
+==
+Book b= new Book();
+
+b가 아무것도 없을 때 객체 변수
+b가 가르키고 있을떄 인스턴스 변수
+
+클래스 안에 변수 = 속성,멤버변수,프로퍼티
+
+
+Book[] b=new Book[3];
+
+
+int[] a ={10,20,30,40,50};  ->이걸 많이씀
+==
+int[]a;
+a=new int[]{10,20,30,40,50}
+
+float[] f=new float[50];
+
+
+Book b1,b2,b3;
+b1=new Book();
+b2=new Book();
+b3=new Book();
+==
+Book[]b=newBook[3]
+b[0]=new Book();
+b[2]=new Book();
+b[3]=new Book();
+
+
+static있는 메소드는 자동메모리(static-zone)에 자동으로 한번 로딩됨
+static없는 메소드는 none-static-zone에 저장
+static-zone 에서 StackArea로 이동함
+Heap Area는 객체가 생성되는 메모리공간(new)
+
+static이 없으면 객체를 생성해야댐(new)
+
+클래스가 다를때
+-----------------------------------
+public class StaticAccess{
+  public static void main(string[] args)
+  {
+     int a=10;
+     int b=20;
+     int sum=MyUtil.hap(a,b);
+     System.out.printIn(sum);
+  }
+}
+public class MyUtil{
+  public static int hap(int a, int b){
+    int v=a+b;
+    return v;
+  }
+}         
+-------------------------------
+
+
+static 이 있으면 클래스 멤버 ->객체를 생성하고 만들어야하기떄문
+static 이 없으면 인스턴스메소드 ->객체를 생성하고 만들어야하기떄문
+
+오버로딩
+매개변수만 다른 메소드 여러개 만드는것
+오버라이딩
+
