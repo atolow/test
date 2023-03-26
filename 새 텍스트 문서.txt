@@ -5,6 +5,9 @@ java.exe 실행파일->실행
 
 java.exe HelloWorld.java -ecoding UTF-8
 
+배열선언
+int[] arr=new int[6]
+
 8bit=1byte
 
 정수 32를
@@ -76,18 +79,18 @@ boolean value= scanner.nextBoolean(); 참거짓으로 저장
 System.out.println(c1.PI);
 // 클래스를 통해서 PI에 접근
 
-System.out.println(Calculator.PI);
+System.out.println(fc.java.part2.Calculator.PI);
 
 클래스
-Book b;  ->b는 객체 변수 이름
-new Book();  ->객체 생성 (실체=인스턴스 를 만들기) (Book은 클래스 이름 =생성자 메서드)
+fc.java.part2.Book b;  ->b는 객체 변수 이름
+new fc.java.part2.Book();  ->객체 생성 (실체=인스턴스 를 만들기) (Book은 클래스 이름 =생성자 메서드)
 
 
 
-Book b;
-b= new Book();
+fc.java.part2.Book b;
+b= new fc.java.part2.Book();
 ==
-Book b= new Book();
+fc.java.part2.Book b= new fc.java.part2.Book();
 
 b가 아무것도 없을 때 객체 변수
 b가 가르키고 있을떄 인스턴스 변수
@@ -95,7 +98,7 @@ b가 가르키고 있을떄 인스턴스 변수
 클래스 안에 변수 = 속성,멤버변수,프로퍼티
 
 
-Book[] b=new Book[3];
+fc.java.part2.Book[] b=new fc.java.part2.Book[3];
 
 
 int[] a ={10,20,30,40,50};  ->이걸 많이씀
@@ -106,14 +109,12 @@ a=new int[]{10,20,30,40,50}
 float[] f=new float[50];
 
 
-Book b1,b2,b3;
-b1=new Book();
-b2=new Book();
-b3=new Book();
+fc.java.part2.Book b1,b2,b3;
+b1=new fc.java.part2.Book();
+b2=new fc.java.part2.Book();
+b3=new fc.java.part2.Book();
 ==
-Book[]b=newBook[3]
-b[0]=new Book();
-b[2]=new Book();
-b[3]=new Book();
-
-good
+fc.java.part2.Book[]b=newBook[3]
+b[0]=new fc.java.part2.Book();
+b[2]=new fc.java.part2.Book();
+b[3]=new fc.java.part2.Book();

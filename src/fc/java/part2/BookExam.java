@@ -1,3 +1,5 @@
+package fc.java.part2;
+
 public class BookExam {
     public static void main(String[] args) {
         Book b=new Book();
