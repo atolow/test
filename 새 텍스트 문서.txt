@@ -119,8 +119,8 @@ b[0]=new Book();
 b[2]=new Book();
 b[3]=new Book();
 
-
-static있는 메소드는 자동메모리(static-zone)에 자동으로 한번 로딩됨
+Method Area 메소드 메모리공간
+static있는 메소드는 static-zone에 자동으로 한번 로딩됨
 static없는 메소드는 none-static-zone에 저장
 static-zone 에서 StackArea로 이동함
 Heap Area는 객체가 생성되는 메모리공간(new)
@@ -154,3 +154,50 @@ static 이 없으면 인스턴스메소드 ->객체를 생성하고 만들어야
 매개변수만 다른 메소드 여러개 만드는것
 오버라이딩
 안배움!
+
+
+쓰레드
+자바가 실제로 클래스 메모리에 실행할떄 프로세스를 쓰레드라함
+병렬처리할때 사용
+
+Literal Pool
+문자열 상수 저장공간
+
+Class 클래스
+는 객체를 모델링하는 도구 + 새로운 자료형 만드는 도구
+public class Student{
+  private String name;
+  private int age;
+}
+Object 객체
+
+int a; ->그냥 변수
+Student st; ->st는 객체 변수(object), Student는 자료형 ,아직 객체변수에 뭐가 들어갈지는 모름
+
+Instance 인스턴스
+
+st=new Student(); -> st객체가 만들어지고 자료가 들어가면 인스턴스 변수
+
+
+ex)
+public class ClassObjectInstance {
+    public static void main(String[] args) {
+        Student st1; // st1: Object
+        Student st2; // st2: Object
+        Student st3; // st3: Object
+
+        st1=new Student("홍길동","컴공",33,"bit@empas.com",2023110,"010-1111-1111");  //st1 : instance
+        st2=new Student("김길동","컴공",33,"bit@empas.com",2023110,"010-1111-1111");  //st2 : instance
+        st3=new Student("나길동","컴공",33,"bit@empas.com",2023110,"010-1111-1111");  //st3 : instance
+
+    }
+}
+
+1.메서드가 호출된 기계어코드가 push되고 실행되는 메모리공간
+2.현재 프로그램이 실행되고 있는 상태를 파악
+3.:LIFO구조
+=Call Stack Fram Area
+
+상속
+자식클래스 객체는 부모클래스 객체가 있어야댐
+super(); -> 부모클래스의 생성자 호출 그러면 부모클래스 객체가 생성되고 자식클래스 객체가 생성댐
