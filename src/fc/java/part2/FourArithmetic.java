@@ -5,10 +5,10 @@ public class FourArithmetic {
         int a,b;
         a=12;
         b=2;
-        java.lang.String resutl;
+        java.lang.String result;
         System.out.println("a+b="+(a+b));
-        System.out.println("a+b="+(a-b));
-        System.out.println("a+b="+(a*b));
-        System.out.println("a+b="+(a/b));
+        System.out.println("a-b="+(a-b));
+        System.out.println("a*b="+(a*b));
+        System.out.println("a/b="+(a/b));
     }
 }

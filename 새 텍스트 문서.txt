@@ -79,18 +79,18 @@ boolean value= scanner.nextBoolean(); 참거짓으로 저장
 System.out.println(c1.PI);
 // 클래스를 통해서 PI에 접근
 
-System.out.println(fc.java.part2.Calculator.PI);
+System.out.println(Calculator.PI);
 
 클래스
-fc.java.part2.Book b;  ->b는 객체 변수 이름
-new fc.java.part2.Book();  ->객체 생성 (실체=인스턴스 를 만들기) (Book은 클래스 이름 =생성자 메서드)
+Book b;  ->b는 객체 변수 이름
+new Book();  ->객체 생성 (실체=인스턴스 를 만들기) (Book은 클래스 이름 =생성자 메서드)
 
 
 
-fc.java.part2.Book b;
-b= new fc.java.part2.Book();
+Book b;
+b= new Book();
 ==
-fc.java.part2.Book b= new fc.java.part2.Book();
+Book b= new Book();
 
 b가 아무것도 없을 때 객체 변수
 b가 가르키고 있을떄 인스턴스 변수
@@ -98,7 +98,7 @@ b가 가르키고 있을떄 인스턴스 변수
 클래스 안에 변수 = 속성,멤버변수,프로퍼티
 
 
-fc.java.part2.Book[] b=new fc.java.part2.Book[3];
+Book[] b=new Book[3];
 
 
 int[] a ={10,20,30,40,50};  ->이걸 많이씀
@@ -109,12 +109,185 @@ a=new int[]{10,20,30,40,50}
 float[] f=new float[50];
 
 
-fc.java.part2.Book b1,b2,b3;
-b1=new fc.java.part2.Book();
-b2=new fc.java.part2.Book();
-b3=new fc.java.part2.Book();
+Book b1,b2,b3;
+b1=new Book();
+b2=new Book();
+b3=new Book();
 ==
-fc.java.part2.Book[]b=newBook[3]
-b[0]=new fc.java.part2.Book();
-b[2]=new fc.java.part2.Book();
-b[3]=new fc.java.part2.Book();
+Book[]b=newBook[3]
+b[0]=new Book();
+b[2]=new Book();
+b[3]=new Book();
+
+Method Area 메소드 메모리공간
+static있는 메소드는 static-zone에 자동으로 한번 로딩됨
+static없는 메소드는 none-static-zone에 저장
+static-zone 에서 StackArea로 이동함
+Heap Area는 객체가 생성되는 메모리공간(new)
+
+static이 없으면 객체를 생성해야댐(new)
+
+클래스가 다를때
+-----------------------------------
+public class StaticAccess{
+  public static void main(string[] args)
+  {
+     int a=10;
+     int b=20;
+     int sum=MyUtil.hap(a,b);
+     System.out.printIn(sum);
+  }
+}
+public class MyUtil{
+  public static int hap(int a, int b){
+    int v=a+b;
+    return v;
+  }
+}         
+-------------------------------
+
+
+static 이 있으면 클래스 멤버 ->객체를 생성하고 만들어야하기떄문
+static 이 없으면 인스턴스메소드 ->객체를 생성하고 만들어야하기떄문
+
+오버로딩(정적바인딩) 
+컴파일 시점에서 사용될 메서드가 결정되는 바인딩
+매개변수만 다른 메소드 여러개 만드는것(프로그램의 샐행속도와는 무관)
+
+
+
+쓰레드
+자바가 실제로 클래스 메모리에 실행할떄 프로세스를 쓰레드라함
+병렬처리할때 사용
+
+Literal Pool
+문자열 상수 저장공간
+
+Class 클래스
+는 객체를 모델링하는 도구 + 새로운 자료형 만드는 도구
+public class Student{
+  private String name;
+  private int age;
+}
+Object 객체
+
+int a; ->그냥 변수
+Student st; ->st는 객체 변수(object), Student는 자료형 ,아직 객체변수에 뭐가 들어갈지는 모름
+
+Instance 인스턴스
+
+st=new Student(); -> st객체가 만들어지고 자료가 들어가면 인스턴스 변수
+
+
+ex)
+public class ClassObjectInstance {
+    public static void main(String[] args) {
+        Student st1; // st1: Object
+        Student st2; // st2: Object
+        Student st3; // st3: Object
+
+        st1=new Student("홍길동","컴공",33,"bit@empas.com",2023110,"010-1111-1111");  //st1 : instance
+        st2=new Student("김길동","컴공",33,"bit@empas.com",2023110,"010-1111-1111");  //st2 : instance
+        st3=new Student("나길동","컴공",33,"bit@empas.com",2023110,"010-1111-1111");  //st3 : instance
+
+    }
+}
+
+1.메서드가 호출된 기계어코드가 push되고 실행되는 메모리공간
+2.현재 프로그램이 실행되고 있는 상태를 파악
+3.:LIFO구조
+=Call Stack Fram Area
+
+상속
+자식클래스 객체는 부모클래스 객체가 있어야댐
+super(); -> 부모클래스의 생성자 호출 그러면 부모클래스 객체가 생성되고 자식클래스 객체가 생성댐
+
+
+Upcasting(업케스팅)
+
+부모클래스 객체변수 = new 자식클래스();
+ex)
+Animal x =new Dog();
+x.eat();
+
+상속체이닝 ->나보다 부모가 먼저다 객체 생성자가 부모가 먼저 생성되고 자식이 생성댐
+오버라이드
+부모클래스와 자식클래스가 같은 이름은 메소드를 재정의하는것
+
+동적바이딩 -> 오버라이드 부모클래스 메서드가 실행안되고 자식 메서드가 실행댐
+컴파일 시점에서는 부모 메소든데 실행될떄는 재정의(오버라이드)된 자식클래스 메소드가 실행댐
+
+super(); ->상위 기본생성자 호출 (생성자 안 맨위에 있어야댐)
+
+다운케스팅
+부모클래스의 타입을 자식클래스의 타입으로 바꾸는 것
+------------------------------------
+        Animal ani=new Dog();
+        ani.eat();
+
+        ani=new Cat();
+        ani.eat();
+---------------------------------
+Cat c=(cat)ani;
+c.night();
+ex)자식클래스 객체변수(자식클래스)인스턴스
+    객체변수.함수이름();
+==
+((Cat).ani).night();
+ex)
+((자식클래스)객체변수).(자식클래스)인스턴스
+
+다형성(message polymorphism
+부모 클래스가 동일한 메세지로 하위클래스를 서로 다르게 동작시키는 객체지향 원리
+
+다형성인수
+public class PolyMethodTest {
+    public static void main(String[] args) {
+        Dog d=new Dog();
+        display(d);
+        Cat c=new Cat();
+        display(c);
+    }
+
+    private static void display(Animal ani) {        ->부모클래스 를 넣어줌
+        ani.eat();
+        // Cat타입으로 받은 경우에만  -> if
+        //((Cat)ani).night();       ->오류남
+    }
+
+    private static void display(Animal ani) {
+        ani.eat();
+        // Cat타입으로 받은 경우에만  -> if
+        //((Cat)ani).night();
+        if(ani instanceof Cat){         ->instanceof ani가 Cat 타입인지 검사
+            ((Cat)ani).night();
+        }
+    }
+}
+---------------------------------------------------------------------
+다형성 배열 (상위타입 배열)
+public class PolyArrayTest {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        Cat c = new Cat();
+        // Dog, Cat 을 저장할 배열을 생성하시오
+
+        //Animal[] ani={new Dog(), new Cat()};
+        Animal[] ani = new Animal[2];
+
+        ani[0] = d;
+        ani[1] = c;
+        display(ani);
+    }
+    public static void display(Animal[] ani){
+        for(int i=0; i<ani.length;i++)
+        {
+            ani[i].eat();
+            if(ani[i] instanceof Cat)
+            {
+                ((Cat)ani[i]).night();
+            }
+        }
+    }
+}
+
