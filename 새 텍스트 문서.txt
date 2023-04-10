@@ -147,13 +147,13 @@ public class MyUtil{
 -------------------------------
 
 
-static 이 있으면 클래스 멤버 ->객체를 생성하고 만들어야하기떄문
-static 이 없으면 인스턴스메소드 ->객체를 생성하고 만들어야하기떄문
+static 이 있으면 클래스 멤버 ->객체를 생성 필요없음 ex)display(a);
+static 이 없으면 인스턴스메소드 ->객체를 생성하고 만들어야하기떄문 ex)a.display;
 
-오버로딩
-매개변수만 다른 메소드 여러개 만드는것
-오버라이딩
-안배움!
+오버로딩(정적바인딩) 
+컴파일 시점에서 사용될 메서드가 결정되는 바인딩
+매개변수만 다른 메소드 여러개 만드는것(프로그램의 샐행속도와는 무관)
+
 
 
 쓰레드
@@ -218,3 +218,175 @@ x.eat();
 컴파일 시점에서는 부모 메소든데 실행될떄는 재정의(오버라이드)된 자식클래스 메소드가 실행댐
 
 super(); ->상위 기본생성자 호출 (생성자 안 맨위에 있어야댐)
+
+다운케스팅
+부모클래스의 타입을 자식클래스의 타입으로 바꾸는 것
+------------------------------------
+        Animal ani=new Dog();
+        ani.eat();
+
+        ani=new Cat();
+        ani.eat();
+---------------------------------
+Cat c=(cat)ani;
+c.night();
+ex)자식클래스 객체변수(자식클래스)인스턴스
+    객체변수.함수이름();
+==
+((Cat).ani).night();
+ex)
+((자식클래스)객체변수).(자식클래스)인스턴스
+
+다형성(message polymorphism
+부모 클래스가 동일한 메세지로 하위클래스를 서로 다르게 동작시키는 객체지향 원리
+
+다형성인수
+public class PolyMethodTest {
+    public static void main(String[] args) {
+        Dog d=new Dog();
+        display(d);
+        Cat c=new Cat();
+        display(c);
+    }
+
+    private static void display(Animal ani) {        ->부모클래스 를 넣어줌
+        ani.eat();
+        // Cat타입으로 받은 경우에만  -> if
+        //((Cat)ani).night();       ->오류남
+    }
+
+    private static void display(Animal ani) {
+        ani.eat();
+        // Cat타입으로 받은 경우에만  -> if
+        //((Cat)ani).night();
+        if(ani instanceof Cat){         ->instanceof ani가 Cat 타입인지 검사
+            ((Cat)ani).night();
+        }
+    }
+}
+---------------------------------------------------------------------
+다형성 배열 (상위타입 배열)
+public class PolyArrayTest {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        Cat c = new Cat();
+        // Dog, Cat 을 저장할 배열을 생성하시오
+
+        //Animal[] ani={new Dog(), new Cat()};
+        Animal[] ani = new Animal[2];
+
+        ani[0] = d;
+        ani[1] = c;
+        display(ani);
+    }
+    public static void display(Animal[] ani){
+        for(int i=0; i<ani.length;i++)
+        {
+            ani[i].eat();
+            if(ani[i] instanceof Cat)
+            {
+                ((Cat)ani[i]).night();
+            }
+        }
+    }
+}
+
+추상 메서드(불완전한 메서드): 메서드의 구현부가 없다.
+abstract ->혼자서 동작x 객체를 만들지 못함
+맨 자식 클래스는 추상클래스가 될수없음
+
+
+ex)
+package fc.java.poly;
+
+public abstract class Animal {
+    public Animal(){
+        super();
+    }
+    public abstract void eat();
+}
+밑에는 구현클래스 넣을수있음
+ex)
+public abstract class Animal {
+    //추상메서드
+    public abstract void eat();
+    //구현 메서드
+    public void move(){
+        System.out.println("무리를 지어서 이동한다.");
+    }
+}
+
+인터페이스 interface
+서로 다른 동작을 가지는 클래스를 상속관계로 만듬
+부모가 인터넷 구현메서드 하면
+라디오는 인터넷 기능안됌 tv는 인터넷이 됌 ->오류 생김 그래서 인터페이스를 만들면 구현클래스가 못오게함
+ex)
+public abstract class RemoCon {
+    public abstract void chUp();
+    public abstract void chDown();
+    public abstract void volUp();
+    public abstract void volDown();
+    public void internet(){
+        System.out.println("인터넷이 구동된다.");  ->오디오는 인터넷안댐
+    }
+}
+
+interface를 하면 abstract 생략가능
+
+그리고 자식클래스는 상속받을때 implements를 를 넣음
+
+public class Radio implements RemoCon{
+    //chUp(), chDown(), VolUp(), VolDown()
+    @Override
+    public void chUp() {
+        System.out.println("Radio의 채널이 올라간다.");
+    }
+
+    @Override
+    public void chDown() {
+        System.out.println("Radio의 채널이 내려간다.");
+
+    }
+
+    @Override
+    public void volUp() {
+        System.out.println("Radio의 소리가 올라간다.");
+
+    }
+
+    @Override
+    public void volDown() {
+        System.out.println("Radio의 소리가 내려간다.");
+
+    }
+
+}
+
+abstract 와 interface 의차이점은
+abstract는 동작 클래스를 구현메서드를 가질수있음 -> 재정의 할때 오류 발견 못함
+interface는 동작클래스를 구현메서드 가질수없음 -> 구현메서드를 가질수 없기대문에 재정의해야지만 실행할수있음
+
+
+인터페이스에 사용하는 final static 상수
+
+public int MAXCH=99;
+public int MINCH=1;
+== 위아래 같음
+public static final int MAXCH=99;
+public final static int MINCH=1;    ->final static 위치 바꿔도댐 변경못함(상수)
+
+
+자바는 당일상속만 지원하지만 인터페이스로 구현하면 여러개가능
+
+public class Dog extends Animal implements Pet,Robots
+{
+ ~!~~!~!~!
+}
+
+어떤 클래스를 한개만들면 기본적으로 생략된 코드 3개
+import java.lang.*; ->default package
+
+public class A extends Object ->java.lang.Object(최상위클래스)
+public A(){
+	super(); ->default 생성자
+}
