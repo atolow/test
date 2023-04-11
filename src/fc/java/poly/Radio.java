@@ -1,7 +1,8 @@
 package fc.java.poly;
 
 public class Radio implements RemoCon{
-    //chUp(), chDown(), VolUp(), VolDown()
+
+    // chUp(), chDown(), volUp(), VolDown()
     @Override
     public void chUp() {
         System.out.println("Radio의 채널이 올라간다.");
@@ -27,7 +28,7 @@ public class Radio implements RemoCon{
 
     @Override
     public void internet() {
-        System.out.println("Radio 에서는 인터넷이 지원이 안됩니다.");
+        System.out.println("인터넷이 안됩니다.");
     }
 
 }

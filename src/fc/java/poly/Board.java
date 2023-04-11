@@ -1,6 +1,6 @@
 package fc.java.poly;
 
-public class Board extends Object{
+public class Board extends Object{  //toString() 메서드가 있음
     private String title;
 
     public String getTitle() {
@@ -13,7 +13,7 @@ public class Board extends Object{
 
     @Override
     public String toString() {
-        System.out.println(super.toString());  //->부모클래스 toString 호출);
+        System.out.println(super.toString());// 상위클래스의 메서드 호출
         return "Board{" +
                 "title='" + title + '\'' +
                 '}';

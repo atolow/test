@@ -9,17 +9,15 @@ public class ObjectPolyArg {
         display(a);
         B b=new B();
         display(b);
-        display(a);
-
-
     }
 
-    private static void display(Object obj) {
+    private static void display(Object obj){ //다형성 인수
         if(obj instanceof A){
             ((A)obj).printGo();
         }
-        else{
+        else {
             ((B)obj).printGo();
         }
     }
+
 }
