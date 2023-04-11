@@ -24,6 +24,6 @@ public class TV implements RemoCon{
 
     @Override
     public void internet() {
-        System.out.println("TV에서 인터넷이 실행된다.");
+        System.out.println("TV에서 인터넷이 실행된다");
     }
 }
