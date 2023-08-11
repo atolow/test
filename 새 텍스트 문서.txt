@@ -55,7 +55,11 @@ System.out.printf("내 이름은 %s이다 \n", name); \n줄바꿈
 import java.util.Scanner;
 
 
-Scanner scanner = new Scanner(System.in); 입력받기
+Scanner scanner = new Scanner(System.in); 입력받기  ->맨위 하나만
+
+
+scan.nextLine();->버퍼 비우기  ->맨 마지막
+
 
 String value = scanner.nextLine(); 문자열로 저장
 int value = scanner.nextInt(); 정수로 저장
@@ -125,7 +129,7 @@ static없는 메소드는 none-static-zone에 저장
 static-zone 에서 StackArea로 이동함
 Heap Area는 객체가 생성되는 메모리공간(new)
 
-static이 없으면 객체를 생성해야댐(new)
+static이 없으면 객체를 생성해야댐(new)  ->정적메서드, 클래식 메서드
 
 클래스가 다를때
 -----------------------------------
@@ -257,9 +261,8 @@ public class PolyMethodTest {
 
     private static void display(Animal ani) {
         ani.eat();
-        // Cat타입으로 받은 경우에만  -> if
-        //((Cat)ani).night();
-        if(ani instanceof Cat){         ->instanceof ani가 Cat 타입인지 검사
+
+        if(ani instanceof Cat){         -> if(ani instanceof Cat){ //Cat타입으로 받은 경우에만  -> if Cat타입으로 받은 경우에만  -> if instanceof ani가 Cat 타입인지 검사
             ((Cat)ani).night();
         }
     }
@@ -390,3 +393,302 @@ public class A extends Object ->java.lang.Object(최상위클래스)
 public A(){
 	super(); ->default 생성자
 }
+
+String str=new String("HelloWorld");
+String str1="HelloWorld";  -> "HelloWorld"= 리터널 -> 문자열 상수
+
+
+HelloWorld
+0123456789
+.length() ->길이
+char firstChar=str.charAㅅ(0)->0번쨰인 H만 저장
+String replacedString = str.replaceAll("o", "x"); ->모든 o를 x로  ->원본이 바뀌는건 아님
+int index= str.indexOf("W"); ->W가 있는 위치 를 넣어라 HelloWorld -> 5  단어가없을시 -1 대입댐
+String upperCase=str.toUpperCase(); ->모든 문자 대문자로 바꿔라
+String lowerCase=str.toLowerCase(); ->모든 문자 소문자로 바꿔라
+String substring = str.substring(5); 5번쨰 문자부터 끝까지 가져와라 HelloWorld ->World
+String substring = str.substring(5,8); 5번쨰 문자부터 8-1문자까지 가져와라 HelloWorld ->Worl
+
+
+문자열 비교
+
+if(a==b)  ->정수형 만 가능
+
+String st1="Hello";
+STring st2="World";
+문자열은 
+if(st1.equals.(str2)){
+	System.out.println("두 문자열은 같습니다.");
+}
+else{
+	System.out.println("두 문자열은 다릅니다.");
+}
+
+String str3="apple";
+String str4="banana";
+
+int result=str3.compareTo(str4); 
+                                             ->compareTo 0이면 같다 크면 양수 작으면 음수
+if(resul==0){
+	System.out.println("두 문자열은 같습니다.");
+}
+else if(result<0)
+	System.out.println("st3이 str4보다  큽니다.");
+}
+else{
+System.out.println("st3이 str4보다  작습니다.");
+}
+
+-----------------------------------------------------------
+split
+
+package fc.java.course2.part1;
+
+import java.util.Scanner;
+
+public class StringSplit {
+    public static void main(String[] args) {
+        String str1="Hello,World,Java";
+        String str2="Hello World Java";
+        String[] strArray=str1.split(",");          ->,기준으로 String[] 에 넣음
+        for(String s : strArray){
+            System.out.println(s.toString());
+        }
+        String[] strArray2=str2.split("\\s+");
+
+        for(String s : strArray2){
+            System.out.println(s.toString());
+        }
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("문자열을 입력하세요.");
+
+        String  str=scanner.nextLine();
+
+        String[] strArray3=str.split("\\s+");        ->\\s+ 공백 기준
+        for(String s : strArray3){
+            System.out.println(s.toString());
+        }
+    }
+}
+
+
+정수를 문자열로 바꾸기
+ String str1="123";
+        String str2="123";
+
+        System.out.println(str1+str2);
+
+        int num=Integer.parseInt(str1)+Integer.parseInt(str2);
+
+        System.out.println(num);
+------------------------------------------------------------
+
+
+제네릭 
+Arrary<String>  ->Arrary에서 String만 넣을수있음
+
+
+ObjectArray<String> array= new ObjectArray<>5();
+
+Araay<T> ->T는 가변 String넣으면 모두 String으로됨 Book은 Book
+-----------------------------------------------------------
+제네릭 타입 ObjectArray<T> ->T에 올수있는 제네릭 타입(파라미터)   ->book 제네릭 타입매개변수
+클래스,인터페이스,메소드에서 사용될수있는 타입 매개변수
+----------------------------------
+제네릭 멀티 타입 파라미터
+public class Pair<K,V> {
+    private K key;
+    private V value;
+
+    public Pair(K key, V value){
+        this.key=key;
+        this.value=value;
+    }
+	
+ Pair<String, Integer> pair=new Pair<>("hello",1);
+
+        System.out.println(pair.getKey());
+        System.out.println(pair.getValue());
+
+        Map<String, Integer> maps=new HashMap<>();
+        maps.put("kor",60);
+        maps.put("eng",80);
+        maps.put("math",70);
+----------------------------------------
+제네릭 제한된 타입 페라미터
+특정한 타입으로 제한된 제네릭 타입 미라미터
+public class AverageCalculator<T extends Number> {  ->Number클래스 또는 그 하위 클래스타입으로만 사용가능
+}
+-------------------------------------
+함수형 인터페이스
+단 하나의 추상 메서드를 가진 인터페이스
+part2,model2 에서 StringUtilsTest, IntegerUtilsTest 확인
+------------------------------------
+람다식
+model2------------------------------------
+model2package fc.java.model2
+@FunctionalInterface //함수형 인터페이스
+
+public interface MathOperation {
+    public int operation(int x, int y); //추상 메서드
+}
+
+part2----------------
+package fc.java.course2.part2;
+
+import fc.java.model2.MathOperation;
+
+public class LambdaExample {
+    public static void main(String[] args) {
+        MathOperation add=new MathOperation() {
+            @Override
+            public int operation(int x, int y) {
+                return 0;
+            }
+        };
+        int result=add.operation(10,20);
+        System.out.println("result="+result);
+    }
+}
+
+람다식이면 이걸로 변환 가능
+
+package fc.java.course2.part2;
+
+import fc.java.model2.MathOperation;
+
+public class LambdaExample {
+    public static void main(String[] args) {
+        MathOperation add=(int x, int y)->{return x+y;};
+        MathOperation multi=(x,y) ->x*y;
+        int result=add.operation(10,20);
+        System.out.println("result="+result);
+        int mulresult=multi.operation(10,20);
+        System.out.println("mulresult="+mulresult);
+
+    }
+}
+스트림: 데이터 흐름
+
+package fc.java.course2.part2;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
+public class StreamAPITest {
+    public static void main(String[] args) {
+        int[] numbers={1,2,3,4,5};
+//        int even=0;
+//        for(int num:numbers){
+//            if(num%2==0){
+//                even+=num;
+//            }
+//        }
+//        System.out.println(even);
+
+        int sumOfEvens=Arrays.stream(numbers)
+                .filter(n->n%2==0)
+                .sum();
+        System.out.println(sumOfEvens);
+
+        int[] evenNumbers=Arrays.stream(numbers)
+                .filter(n->n%2==0)
+                .toArray();
+        for(int even : evenNumbers){
+            System.out.println("even=" +even);
+        }
+    }
+}
+
+------------------------------------------------------------------------------
+package fc.java.course2.part2;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.Predicate;
+
+public class StreamExample {
+    public static boolean isEven(int number){
+        return number%2==0;
+    }
+    public static void main(String[] args) {
+        List<Integer> numbers= Arrays.asList(1,2,3,4,5,6,7,8,9,10);
+        Predicate<Integer> isEven=n->n%2==0;
+        int sumOfSquares=numbers.stream()
+//                .filter(isEven)
+                .filter(StreamExample::isEven)
+                .sorted()
+                .map(n->n*n)
+                .reduce(0,Integer::sum);
+        System.out.println("sumOfSquares="+ sumOfSquares);
+    }
+}
+
+--------------------------------------------------------------------------------
+
+map
+package fc.java.course2.part2;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class MapStreamExmaple {
+    public static void main(String[] args) {
+        List<Integer> numbers= Arrays.asList(1,2,3,4,5);
+        List<Integer> squaredNumbers=numbers.stream()
+                .map(n->n*n)
+                .collect(Collectors.toList());
+        System.out.println("squaredNumbers" +squaredNumbers);
+    }
+}
+-----------------------------------------------------------------------
+package fc.java.course2.part2;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class MapStreamExmaple2 {
+    public static void main(String[] args) {
+        List<String> words= Arrays.asList("apple", "banana","cherry", "orange");
+
+        List<String> uppercase=words.stream()
+                .map(word->word.toUpperCase())
+                .collect(Collectors.toList());
+
+        System.out.println("uppercase="+uppercase);
+
+        for(String str:uppercase){
+            System.out.println(str);
+        }
+    }
+}
+
+-------------------------------------------------------------------------
+JSON
+model3 ->Member
+
+package fc.java.course2.part3;
+
+import com.google.gson.Gson;
+import fc.java.model3.Member;
+
+public class GsontoJson {
+    public static void main(String[] args) {
+        Member mvo=new Member("홍길동",30,"bit@empas.com");
+        // JSON -> {"name" : "홍길동", "age":30,"email":"bit@empas.com"}
+
+        Gson gson=new Gson();
+        // Object(Member) -> JSON
+        gson.toJson(mvo);
+        String json=gson.toJson(mvo);
+        System.out.println("json=" + json);
+        
+    }
+}
+
+
+
+------------------------------------------------------------------------------

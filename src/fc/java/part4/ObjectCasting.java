@@ -9,6 +9,7 @@ public class ObjectCasting {
         Animal ani=new Dog();
         ani.eat();
 
+
         ani=new Cat();
         ani.eat();
 

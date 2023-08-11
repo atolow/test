@@ -14,9 +14,9 @@ public class PolyMethodTest {
 
     private static void display(Animal ani) {
         ani.eat();
-        // Cat타입으로 받은 경우에만  -> if
+
         //((Cat)ani).night();
-        if(ani instanceof Cat){
+        if(ani instanceof Cat){ //Cat타입으로 받은 경우에만  -> if Cat타입으로 받은 경우에만  -> if
             ((Cat)ani).night();
         }
     }
