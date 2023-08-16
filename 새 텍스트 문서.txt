@@ -692,3 +692,33 @@ public class GsontoJson {
 
 
 ------------------------------------------------------------------------------
+반대로
+
+package fc.java.course2.part3;
+
+import com.google.gson.Gson;
+import fc.java.model3.Member;
+
+public class GsonfromJson {
+    public static void main(String[] args) {
+        String json="{\"name\":\"홍길동\",\"age\":30,\"email\":\"bit@empas.com\"}";
+        //JSON -> Object(Member)
+        Gson gson=new Gson();
+        Member mvo=gson.fromJson(json,Member.class);
+
+        System.out.println("mvo = " + mvo);
+    }
+}
+
+---------------------------------------------------------------------------------------
+result= (조건) ? 1 : 2;
+조건이 참이면 1 거짓이며 2 
+int num1 = 5, num2 = 7;
+
+int result;
+
+ 
+
+result = (num1 - num2 > 0) ? num1 : num2;
+
+System.out.println("두 정수 중 더 큰 수는 " + result + "입니다.");
