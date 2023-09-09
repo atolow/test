@@ -1,4 +1,4 @@
-package fc.java.kim;
+package fc.java.realtest;
 
 public class Printer {
     private int tonerLevel;

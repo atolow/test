@@ -1,4 +1,4 @@
-package fc.java.kim;
+package fc.java.realtest;
 
 public class EnhancedPlayer {
     private String name;
