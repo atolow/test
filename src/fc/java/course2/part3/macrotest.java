@@ -19,9 +19,9 @@ public class macrotest {
 
             String wow=String.valueOf(test);
             wow.trim();
-            System.out.println("wow= "+wow);
+            System.out.println("wow 는 "+wow);
 
-            System.out.println("test = " + test.text());
+            System.out.println("test 는 " + test.text());
 
         }catch (Exception e){
             e.printStackTrace();

@@ -30,7 +30,7 @@ public class JsoupExample {
                 System.out.println(num.get(i).text()+" : "+info.get(i).text());
             }
             Elements test = document.select(".bible_text");
-            System.out.println("test = " + test.text());
+            System.out.println("test 는 " + test.text());
 
         }catch (Exception e){
             e.printStackTrace();
