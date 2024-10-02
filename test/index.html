@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>CORINI</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+        * {
+            font-family: "Gowun Dodum", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        body {
+            background-color: whitesmoke;
+            color: black;
+        }
+
+        .p-3 {
+            border-bottom: 1px solid #636262;
+        }
+
+        a.nav-link {
+            color: black;
+            font-size: large;
+        }
+
+        .icon {
+            height: 75px;
+            width: 100px;
+        }
+
+        .nav {
+            margin: 0 auto 0 auto;
+        }
+
+        .nav-link {
+            margin-right: 50px;
+        }
+
+        .header {
+            border-bottom: 1px solid #636262;
+        }
+
+        .mycards {
+            width: 100%;
+            margin: 30px auto 60px auto;
+
+            flex-direction: row;
+            align-items: center;
+            display: inline-flex;
+            justify-content: center;
+
+            border-bottom: 1px solid #636262;
+        }
+
+        .col {
+            width: 300px;
+
+            margin: 30px 20px 60px 20px;
+        }
+
+        .card {
+            border-radius: 30px;
+            background-color: rgb(207, 207, 207);
+            border: none;
+            color: black;
+            margin: auto;
+            width: 300px;
+        }
+
+        .card-img-top {
+            width: 200px;
+            height: 220px;
+            border-radius: 70%;
+            overflow: hidden;
+            margin: auto;
+            padding-top: 20px;
+        }
+
+        .card-body {
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .teamgoal>p {
+            font-size: 60px;
+            text-align: center;
+            margin: 20px 20px;
+            font-family: "Anton", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .teamgoal>h1 {
+            text-align: center;
+            margin: 20px 20px;
+            font-size: 1.25rem;
+        }
+
+        a {
+            text-decoration-line: none;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <header class="p-3 text-bg-dark">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <!-- <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"> -->
+                <img src="https://www.logomaker.com/api/main/images/1j+ojlxEOMkX9Wyqfhe43D6kh...6CrxZOmRnJwXs1M3EMoAJtlyIqgfdo8...o5PExevg9C3ktKMcs8"
+                    class="icon"></li>
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+                    <li><a href="./index.html" class="nav-link px-2">Team</a></li>
+                    <!-- <li><a href="./Members.html" class="nav-link px-2">Member</a></li> -->
+                    <!-- <li><a href="#" class="nav-link px-2">Join</a></li> -->
+                </ul>
+
+            </div>
+        </div>
+    </header>
+    <div class="header">
+        <div class="px-4 py-5 my-5 text-center">
+            <img class="d-block mx-auto mb-4"
+                src="https://www.logomaker.com/api/main/images/1j+ojlxEOMkX9Wyqfhe43D6kh...6CrxZOmRnJwXs1M3EMoAJtlyIqgfdo8...o5PExevg9C3ktKMcs8"
+                alt="" height="200" width="250" height="57">
+            <h1 class="display-5 fw-bold text-body-emphasis">코린이</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">소개 메시지</p>
+            </div>
+        </div>
+    </div>
+    <div class="mycards">
+        <div id="card" class="row row-cols-1 row-cols-md-3 g-4">
+            <div onclick="window.open('./이해욱.html')"class="col">
+                <div class="card h-100">
+                    <img src="https://d20aeo683mqd6t.cloudfront.net/ko/articles/title_images/000/039/143/medium/IMG_5649%E3%81%AE%E3%82%B3%E3%83%92%E3%82%9A%E3%83%BC.jpg?2019"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">이해욱</h5>
+                        <p class="card-text">팀원</p>
+                    </div>
+                </div>
+            </div>
+            <div onclick="window.open('./박재혁.html')"class="col">
+                <div class="card h-100">
+                    <img src="https://t1.daumcdn.net/thumb/R720x0/?fname=http://t1.daumcdn.net/brunch/service/user/bAz/image/WcXv5hN07jef2Y1XkZgRq2CKVRE"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">박재혁</h5>
+                        <p class="card-text">팀원</p>
+                    </div>
+                </div>
+            </div>
+            <div onclick="window.open('./전수연.html')"class="col">
+                <div class="card h-100">
+                    <img src="https://postfiles.pstatic.net/MjAyNDA5MDZfMzAg/MDAxNzI1NjI3MTU3OTcw.K8PDk67xZd3SNXa6KFqmy0Xmrxp8uWnhuinzGxIvTQog.DwK1U3U_JvUhtNGbHJ3uw-6eE8lY4ZO8zZq4M37czPQg.JPEG/1725627157780.jpg?type=w773"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">전수연</h5>
+                        <p class="card-text">팀원</p>
+                    </div>
+                </div>
+            </div>
+            <div onclick="window.open('./정건우.html')"class="col">
+                <div class="card h-100">
+                    <img src="https://postfiles.pstatic.net/MjAyNDAzMjNfNDkg/MDAxNzExMTUwNzA0MzM4._JKRMl-Ba5D8kjkDmsL5vfKI298_Z5TDkiPFMSf0ZBgg.W3rn7wk0hk2_HncdUM5agKBi7LzvIu6iDVEL0dp_KhMg.JPEG/hamburger%EF%BC%8D1238246%EF%BC%BF1280.jpg?type=w773"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">정건우</h5>
+                        <p class="card-text">팀원</p>
+                    </div>
+                </div>
+            </div>
+            <div onclick="window.open('./박재홍.html')"class="col">
+                <div class="card h-100">
+                    <img src="https://postfiles.pstatic.net/MjAyNDA4MTdfMzEg/MDAxNzIzODY5MjkzODA3.nDPR_KkxZ1dIgQ2LXL0hrRFuTke-eBm3RghlDGWtSGMg.euB042OfQzL_062yWGQmlLxTBKsbmy4F6sppY_9rRHEg.JPEG/KakaoTalk_20240817_094914857_06.jpg?type=w466"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">박재홍</h5>
+                        <p class="card-text">팀원</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="teamgoal">
+        <p>OUR GOAL</p>
+        <h1>화이팅</h1>
+    </div>
+</body>
+
+</html>
