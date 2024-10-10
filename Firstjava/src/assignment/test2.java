@@ -59,7 +59,6 @@ public class test2 {
                 i++;
             }
         }
-
         else if(type.equals("Map")){
             int i=1;
             for (String value : map.values()) {
