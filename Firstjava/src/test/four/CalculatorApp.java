@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class CalculatorApp {
 
-    public static boolean start() throws Exception{
+    public static boolean start() throws BadInputException{
         Parser parser = new Parser();
         Scanner scanner = new Scanner(System.in);
 
