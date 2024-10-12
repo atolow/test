@@ -28,7 +28,7 @@ public class Calculator {
 
 
     public double calculate() {
-        double answer = 0;
+        double answer = 0; //temp
         answer = operation.operate(this.firstNumber, this.secondNumber);
         return answer;
     }
