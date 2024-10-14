@@ -2,6 +2,7 @@ package test.four;
 
 import java.util.Scanner;
 
+
 public class CalculatorApp {
 
     public static boolean start() throws BadInputException{

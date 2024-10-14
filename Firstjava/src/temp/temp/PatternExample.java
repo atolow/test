@@ -1,8 +1,5 @@
-package temp;
+package temp.temp;
 
-import test.four.Main;
-
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class PatternExample {
