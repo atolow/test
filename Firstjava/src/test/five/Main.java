@@ -79,6 +79,9 @@ public class Main {
         System.out.println("-".repeat(200));
 
 
+
+
+
         double maxPrice2=0;
         for (int i = 0; i < bookList.size(); i++) {
             if(maxPrice2<bookList.get(i).getPrice()){
