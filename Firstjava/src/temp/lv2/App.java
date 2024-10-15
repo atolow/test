@@ -50,7 +50,8 @@ public class App {
 
                 if (more.equals("exit")) {
                     break;
-                } else if (more.equals("remove")) {
+                }
+                else if (more.equals("remove")) {
                     calculator.removeResult();
                 }
 
