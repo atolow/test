@@ -1,4 +1,4 @@
-package temp.lv1;
+package temp.test2.lv1;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

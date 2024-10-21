@@ -1,6 +1,4 @@
-package temp.lv3;
-
-import temp.lv2.BadInputException;
+package temp.test2.lv3;
 
 public enum OperatorType {
     PLUS('+'),

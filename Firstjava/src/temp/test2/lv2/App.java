@@ -1,9 +1,7 @@
-package temp.lv2;
+package temp.test2.lv2;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.Queue;
-import java.util.LinkedList;
 
 public class App {
     public static void main(String[] args) throws BadInputException {

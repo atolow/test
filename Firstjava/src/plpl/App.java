@@ -1,4 +1,4 @@
-package temp.lv3;
+package plpl;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
