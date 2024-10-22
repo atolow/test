@@ -1,7 +1,5 @@
 package collection;
 
-import test.Iftest;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
