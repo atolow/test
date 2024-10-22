@@ -1,7 +1,7 @@
 package temp.test3;
 
-import java.util.Random;
 import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -19,7 +19,7 @@ public class Main {
                 baseballGame.play();
             }
             else if(game==2){
-                System.out.println("번째 게임 : 시도 횟수 - "  +baseballGame.game);
+                baseballGame.getBit();
             }
         }
 
