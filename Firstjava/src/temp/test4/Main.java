@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         // BaseballGame 객체 생성 & 게임 시작
         Scanner sc = new Scanner(System.in);
-        BaseballGame baseballGame = new BaseballGame();
+        BaseballGame baseballGame = new BaseballGame("3");
 
         while(true) {
             System.out.println("환영합니다! 원하시는 번호를 입력해주세요");
@@ -16,7 +16,9 @@ public class Main {
             int game = sc.nextInt();
 
             if(game==0){
-                baseballGame.level();
+                int level = baseballGame.level();
+                baseballGame= new BaseballGame(String.valueOf(level));
+                baseballGame.play();
             }
             if(game==1) {
                 baseballGame.play();

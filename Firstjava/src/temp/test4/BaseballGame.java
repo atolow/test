@@ -8,9 +8,9 @@ public class BaseballGame {
     private LinkedList<Integer> result = new LinkedList<>();
     private Set<Integer> characterset = new LinkedHashSet<>();
     private LinkedList<Integer> select = new LinkedList<>();
-    private final LinkedList<Record> sample = new LinkedList<>();
+    private LinkedList<Record> sample = new LinkedList<>();
     private int gameNumber=1;
-    private static Integer change= null;
+    private Integer change= null;
 
     // 객체 생성시 정답을 만들도록 함
     public BaseballGame() {
@@ -41,10 +41,11 @@ public class BaseballGame {
         Collections.shuffle(result);
 
         System.out.println("value = " + result);
+        change=Integer.parseInt(input);
 
     }
 
-    public void level(){
+    public int level(){
         System.out.println("설정하고자 하는 자리수를 입력하세요.");
 
         while(true) {
@@ -57,17 +58,13 @@ public class BaseballGame {
             }
         }
         System.out.println(change + "난이도로 설정하였습니다.");
-        new BaseballGame(String.valueOf(change)).play();
+        return change;
 
 
 
     }
     public void play() {
         BaseballGameDisplay baseballGameDisplay = new BaseballGameDisplay();
-        if(change==null){
-            change=3;
-        }
-
         int score=0;
 
         while (true) {
@@ -121,11 +118,10 @@ public class BaseballGame {
         }
         // 게임 진행횟수 반환
         gameNumber++;
-
     }
 
     protected boolean validateInput(String input) {
-        if (input.length() != Integer.parseInt(String.valueOf(input.length()))) {
+        if (input.length()!=change) {
             return false;
         }
         for (char a : input.toCharArray()) { //toCharArray = String을 char형을 배열로 바꿔줌
